@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Application Form</h2>
+
+  <!-- Form Section -->
+  <form id="appForm">
+    <label for="appNumber">Application Number:</label>
+    <input type="text" id="appNumber" required><br><br>
+
+    <label for="appSubject">Application Subject:</label>
+    <input type="text" id="appSubject" required><br><br>
+
+    <label for="tags">Tags:</label>
+    <input type="text" id="tags" required><br><br>
+
+    <button type="button" id="addRecord">Add Record</button>
+  </form>
+
+  <h3>Application Records</h3>
+
+  <!-- Table Section -->
+  <table border="1" id="recordsTable">
+    <thead>
+      <tr>
+        <th>Application Number</th>
+        <th>Application Subject</th>
+        <th>Tags</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- New rows will be added here -->
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
