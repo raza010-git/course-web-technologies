@@ -29,9 +29,10 @@
     </head>
     <body>
         <form>
-            <input type="text" placeholder="Default Value">
+            <input type="text" class="fields" placeholder="Default Value">
             <div id="moreFields"></div>
             <button onclick="addMoreFields()" type="button">Add More</button>
+            <button type="button" onclick="clearAllFields()">Clear</button>
             <button type="button" onclick="printData()">Print Data</button>
             <code id="outputBox"></code>
         </form>
@@ -51,7 +52,7 @@
                 var newField = document.createElement("input");
                 newField.type = "text";
                 newField.name = "newFields[]";
-                newField.className = "fileds";
+                newField.className = "fields";
                 newField.value = "Test-"+counter;
                 newField.placeholder = "Additional Value";
 
@@ -71,7 +72,7 @@
             }
             function printData() {
                 
-                var fields = document.getElementsByClassName("fileds");
+                var fields = document.getElementsByClassName("fields");
                 // console.log(fields);
                 for(var index = 0; index < fields.length; index++) {
                     // console.log(fields[index].value);
@@ -79,10 +80,21 @@
                 }
             }
 
+            function clearAllFields() {
+                var defaultField = document.querySelector(".fields");
+                defaultField.value = ""; // Clear the default field value
+
+                var moreFields = document.getElementById("moreFields");
+                moreFields.innerHTML = ""; // This removes all dynamically added fields
+
+                counter = 0; // Reset counter for dynamic fields
+
+                document.getElementById("outputBox").innerHTML = ""; // Clear output
+            }
             // deleteButton.addEventListener('click', function(event) {
-            //     event.target.parentElement.remove();
-            //     counter--;
-            // });
+              //  event.target.parentElement.remove();
+             //   counter--;
+           //  });
 
 
 
